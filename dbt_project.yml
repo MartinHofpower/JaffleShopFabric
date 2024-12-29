@@ -4,10 +4,7 @@ name: "jaffle_shop"
 version: "3.0.0"
 require-dbt-version: ">=1.5.0"
 
-dbt-cloud:
-  project-id: 275557 # Put your project id here
-
-profile: default # Put your profile here
+profile: jaffle_shop # Put your profile here
 
 model-paths: ["models"]
 analysis-paths: ["analyses"]
@@ -23,10 +20,6 @@ clean-targets:
 
 vars:
   "dbt_date:time_zone": "America/Los_Angeles"
-
-seeds:
-  jaffle_shop:
-    +schema: raw
 
 models:
   jaffle_shop:
