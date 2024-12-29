@@ -21,21 +21,15 @@ order_items_summary as (
         sum(product_price) as order_items_subtotal,
         count(order_item_id) as count_order_items,
         sum(
-            case
-                when is_food_item then 1
-                else 0
-            end
+            cast(is_food_item as int)
         ) as count_food_items,
         sum(
-            case
-                when is_drink_item then 1
-                else 0
-            end
+            cast(is_drink_item as int)
         ) as count_drink_items
 
     from order_items
 
-    group by 1
+    group by order_id
 
 ),
 
@@ -49,8 +43,8 @@ compute_booleans as (
         order_items_summary.count_food_items,
         order_items_summary.count_drink_items,
         order_items_summary.count_order_items,
-        order_items_summary.count_food_items > 0 as is_food_order,
-        order_items_summary.count_drink_items > 0 as is_drink_order
+        iif(order_items_summary.count_food_items > 0, 1, 0) as is_food_order,
+        iif(order_items_summary.count_drink_items > 0, 1, 0) as is_drink_order
 
     from orders
 
