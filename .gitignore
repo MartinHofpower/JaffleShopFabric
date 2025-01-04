@@ -6,7 +6,6 @@ env
 target/
 dbt_packages/
 logs/
-profiles.yml
 
 .DS_Store
 
@@ -14,5 +13,3 @@ profiles.yml
 
 .ruff_cache
 __pycache__
-
-profiles.yml

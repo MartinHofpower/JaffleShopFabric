@@ -1,0 +1,16 @@
+config:
+  partial_parse: true
+jaffle_shop:
+  target: fabric-dev 
+  outputs: 
+    fabric-dev:
+      authentication: ServicePrincipal
+      tenant_id: <azure_tenant_id>
+      client_id: <service_principal_client_id>
+      client_secret: "{{ env_var('DBT_ENV_SECRET_CLIENTSECRET')}}"
+      database: <warehouse_name>
+      driver: ODBC Driver 18 for SQL Server
+      host: <warehouse_sql_connection_string>
+      schema: jaffle
+      threads: 4
+      type: fabric
