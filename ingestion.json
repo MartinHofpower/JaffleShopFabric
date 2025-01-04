@@ -1,0 +1,41 @@
+{
+    "version": "1.0",
+    "files": [
+        {
+            "name": "raw_customers",
+            "suffix": "csv",
+            "path": "sourcedata/", 
+            "header": true
+        },
+        {
+            "name": "raw_items",
+            "suffix": "csv",
+            "path": "sourcedata/", 
+            "header": true
+        },
+        {
+            "name": "raw_orders",
+            "suffix": "csv",
+            "path": "sourcedata/", 
+            "header": true
+        },
+        {
+            "name": "raw_products",
+            "suffix": "csv",
+            "path": "sourcedata/", 
+            "header": true
+        },
+        {
+            "name": "raw_stores",
+            "suffix": "csv",
+            "path": "sourcedata/", 
+            "header": true
+        },
+        {
+            "name": "raw_supplies",
+            "suffix": "csv",
+            "path": "sourcedata/", 
+            "header": true
+        }
+    ]
+}
